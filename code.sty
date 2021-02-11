@@ -1,0 +1,105 @@
+\usepackage{minted}
+
+% Chargement du package minted via tcolorbox
+\tcbuselibrary{minted}
+
+% Pareil, mais avec listing 
+\tcbuselibrary{listings}
+
+
+\newcommand{\Language}{java}
+
+\newtcbinputlisting[use counter=codeCounter, number format=\arabic]{\codeFromFile}[4]{%
+  listing engine=minted,
+  minted language=#1,
+  listing file={#2},
+  minted options={autogobble,linenos,breaklines},
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=blued,
+  coltitle=whitel,
+  boxrule=0.5mm,
+  colback=whitel,
+  coltext=blackd,
+  title=\faCode\hspace{0.5em}\textbf{Code \thetcbcounter\hspace{0.4em}: #3},
+  label=code:#4
+}
+
+\newtcbinputlisting{\codeFromFileSimple}[2]{%
+  listing engine=minted,
+  minted language=#1,
+  listing file={#2},
+  minted options={autogobble,linenos,breaklines},
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=blued,
+  boxrule=0.5mm,
+  colback=whitel,
+  coltext=blackd,
+}
+
+\newtcbinputlisting{\codeFromFileSimpleContinuousLine}[2]{%
+  listing engine=minted,
+  minted language=#1,
+  listing file={#2},
+  minted options={autogobble,linenos,breaklines,firstnumber=last},
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=blued,
+  boxrule=0.5mm,
+  colback=whitel,
+  coltext=blackd,
+}
+
+\newtcblisting[use counter=codeCounter, number format=\arabic]{code}[1]{%
+colback=red!5!whitel,
+colframe=red!75!black,
+fonttitle=\bfseries,
+listing only,
+listing engine=minted,
+minted language=\Language,
+title=#1}
+
+\DeclareTotalTCBox{\iCode}{ O{\Language} v }{%
+verbatim,
+colupper=white,
+coltitle=whitel,
+boxrule=0.1mm,
+colback=whitel,
+coltext=blackd,
+listing engine=minted,
+minted language=#1,
+minted options={autogobble,linenos,breaklines},}{%
+\lstinline^#2^}
+
+\newtcbinputlisting{\shellFromFile}[3]{%
+  verbatim,
+  listing file={#1},
+  listing options={language=command.com,keywordstyle=\color{blue!35!white}\bfseries},
+  listing only,
+  size=title,
+  arc=1.5mm,
+  breakable,
+  enhanced jigsaw,
+  colframe=black,
+  coltitle=whitel,
+  boxrule=0.5mm,
+  colback=black!75!white,
+  coltext=white,
+  title=\faCode\hspace{0.5em}\textbf{#2},
+  label=code:#3
+}
+
+\DeclareTotalTCBox{\commandbox}{ s v }
+{verbatim,colupper=white,colback=black!75!white,colframe=black}
+{\IfBooleanT{#1}{\textcolor{red}{\ttfamily\bfseries > }}%
+\lstinline[language=command.com,keywordstyle=\color{blue!35!white}\bfseries ,morekeywords={java ,javac, javadoc}]^#2^}
