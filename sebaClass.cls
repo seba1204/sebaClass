@@ -5,13 +5,20 @@
 
 % Basics
 \RequirePackage{lmodern}         % Polices modernes
-\RequirePackage[french]{babel}   % Eléments typo français
+% TODO: Handle options to change language!
+\RequirePackage[english]{babel}   % Eléments typo français
 \RequirePackage[utf8]{inputenc}  % Encodage d'entrée
 \RequirePackage[T1]{fontenc}     % Encodage de sortie
 \RequirePackage[many]{tcolorbox} % De belles box
 \RequirePackage{fontawesome}     % Pour avoir des smileys
 % \RequirePackage{ifthen} %
 
+\RequirePackage{svg} % Pour inclure des SVG
+% ex : \includesvg{<full_path_without_extension>}
+% Nécessite d'avoir installé Inkscape, et de l'avoir dans le PATH
+
+\RequirePackage{float}
+\RequirePackage{bm}
 % Couleurs
 \RequirePackage{couleurs}
 
