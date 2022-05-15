@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sebaClass}[2021/01/29 Personal class for my courses]
 
+% TODO: enable wordcount!
+
 \LoadClass[a4paper]{article}
 
 % Basics
