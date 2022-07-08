@@ -82,6 +82,18 @@ minted language=#1,
 minted options={autogobble,linenos,breaklines},}{%
 \lstinline^#2^}
 
+\DeclareTotalTCBox{\iShell}{ O{\Language} v }{%
+verbatim,
+colupper=white,
+coltitle=whitel,
+boxrule=0.1mm,
+colback=blackd,
+coltext=whitel,
+listing engine=minted,
+minted language=#1,
+minted options={autogobble,linenos,breaklines},}{%
+\lstinline^\$ #2^}
+
 \newtcbinputlisting{\shellFromFile}[3]{%
   verbatim,
   listing file={#1},
