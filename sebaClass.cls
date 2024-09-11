@@ -8,7 +8,7 @@
 % Basics
 \RequirePackage{lmodern}         % Polices modernes
 % TODO: Handle options to change language!
-\RequirePackage[english]{babel}   % Eléments typo français
+\RequirePackage[french]{babel}   % Eléments typo français
 \RequirePackage[utf8]{inputenc}  % Encodage d'entrée
 \RequirePackage[T1]{fontenc}     % Encodage de sortie
 \RequirePackage[many]{tcolorbox} % De belles box
@@ -19,8 +19,8 @@
 % ex : \includesvg{<full_path_without_extension>}
 % Nécessite d'avoir installé Inkscape, et de l'avoir dans le PATH
 
-\RequirePackage{float}
-\RequirePackage{bm}
+\RequirePackage{bm} % Pour les symboles gras en maths
+
 % Couleurs
 \RequirePackage{couleurs}
 
