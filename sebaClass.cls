@@ -15,6 +15,11 @@
 \RequirePackage{fontawesome}     % Pour avoir des smileys
 % \RequirePackage{ifthen} %
 
+
+\RequirePackage{newunicodechar} % pour améliorer l'affichage du point médian
+% amélioration de l'affichage du point médian
+\newunicodechar{·}{\kern-.25em\textperiodcentered\kern-.25em}
+
 \RequirePackage{svg} % Pour inclure des SVG
 % ex : \includesvg{<full_path_without_extension>}
 % Nécessite d'avoir installé Inkscape, et de l'avoir dans le PATH
