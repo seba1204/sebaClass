@@ -41,3 +41,6 @@
 
 % Hyperliens
 \RequirePackage{hyper}
+
+% Color box
+\RequirePackage{colorbox}

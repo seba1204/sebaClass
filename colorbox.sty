@@ -1,0 +1,32 @@
+
+% Boite verte avec 2 titres
+% exemple d'utilisation :
+% \begin{resume}{Titre gauche}{Titre droite}
+%   Contenu
+% \end{resume}
+
+
+\newtcolorbox{resume}[3][]{
+    arc=5mm,
+    lower separated=false,
+    fonttitle=\bfseries,
+    colbacktitle=green!10,
+    coltitle=green!50!black,
+    enhanced,
+    attach boxed title to top left={xshift=0.5cm,
+            yshift=-2mm},
+    colframe=green!50!black,
+    colback=green!10,
+    overlay={
+    \node[draw=green!50!black,thick,
+    %inner sep=2mm,
+    fill= green!10,rounded corners=1mm, 
+    yshift=0pt, 
+    xshift=-0.5cm, 
+    left, 
+    text=green!50!black,
+    anchor=east,
+    font=\bfseries] 
+    at (frame.north east) {\textit{#3}};},
+    title=#2,#1
+}
