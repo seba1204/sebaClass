@@ -1,32 +1,23 @@
 
-% Boite verte avec 2 titres
-% exemple d'utilisation :
-% \begin{resume}{Titre gauche}{Titre droite}
-%   Contenu
-% \end{resume}
-
-
-\newtcolorbox{resume}[3][]{
-    arc=5mm,
-    lower separated=false,
-    fonttitle=\bfseries,
-    colbacktitle=green!10,
-    coltitle=green!50!black,
+% a simple box with only a left border 3mm thick, there is no other border
+\newtcolorbox{highlightBox}{
     enhanced,
-    attach boxed title to top left={xshift=0.5cm,
-            yshift=-2mm},
-    colframe=green!50!black,
-    colback=green!10,
-    overlay={
-    \node[draw=green!50!black,thick,
-    %inner sep=2mm,
-    fill= green!10,rounded corners=1mm, 
-    yshift=0pt, 
-    xshift=-0.5cm, 
-    left, 
-    text=green!50!black,
-    anchor=east,
-    font=\bfseries] 
-    at (frame.north east) {\textit{#3}};},
-    title=#2,#1
+    arc=5pt,
+    boxrule=1pt
 }
+
+\newtcbox{\etiq}[1][red]
+    {
+        on line,
+        arc=7pt,
+        colback=#1!10!white,
+        colframe=#1,
+        before upper={\rule[-3pt]{0pt}{10pt}},
+        boxrule=1pt,
+        boxsep=0pt,
+        left=6pt,
+        right=6pt,
+        top=4pt,
+        bottom=2pt,
+        coltext=#1
+    }
